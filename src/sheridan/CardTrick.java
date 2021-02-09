@@ -1,6 +1,7 @@
 /*
- * @modifier=Javnika Patel
+ * Modifier=Javnika Patel
  * StudentNumber: 991600462 
+ * Date: 2020/02/09
  */
 package sheridan;
 
