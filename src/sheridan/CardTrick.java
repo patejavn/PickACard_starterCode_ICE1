@@ -12,6 +12,7 @@ import java.util.Scanner;
  * and then asks the user to pick a card and searches the array of cards
  * for the match to the user's card. To be used as starting code in ICE 1
  * @author javni
+ * Added Lucky card logic to replace Guess card on 2021-02-09 as per the item 7 in the requirement
  */
 
 public class CardTrick 
@@ -52,34 +53,37 @@ public class CardTrick
                
         //Step 6 in the assigment - create luckyCard card object       
         Card luckyCard = new Card();
-        userGuess.setSuit('Diamonds');
-        userGuess.setValue(1);       
+        luckyCard.setSuit("Diamonds");
+        luckyCard.setValue(1);       
 
-        // Now ask the user for a card
-        System.out.println("Pick a suit for your card");
-        for (int i = 0; i < Card.SUITS.length; i++) {
-            System.out.println((i + 1) + ": " + Card.SUITS[i]);
-        }
-        String suit = input.next();
-
-        System.out.println("Enter a value (1 to 13)");
-        int value = input.nextInt();
-
-        //Card userGuess = new Card(value, Card.SUITS[suit - 1]);
-        Card userGuess = new Card();
-        userGuess.setSuit(suit);
-        userGuess.setValue(value);
+        
+//        Commented based on requirement 7
+//        // Now ask the user for a card
+//        System.out.println("Pick a suit for your card");
+//        for (int i = 0; i < Card.SUITS.length; i++) {
+//            System.out.println((i + 1) + ": " + Card.SUITS[i]);
+//        }
+//        String suit = input.next();
+//
+//        System.out.println("Enter a value (1 to 13)");
+//        int value = input.nextInt();
+//
+//        //Card userGuess = new Card(value, Card.SUITS[suit - 1]);
+//        Card userGuess = new Card();
+//        userGuess.setSuit(suit);
+//        userGuess.setValue(value);
 
         boolean match = false;
         for (Card card : hand) {
-            if (card.getValue() == userGuess.getValue()
-                    && card.getSuit().equals(userGuess.getSuit())) {
+            if (card.getValue() == luckyCard.getValue()
+                    && card.getSuit().equals(luckyCard.getSuit())) {
                 match = true;
                 break;
             }
         }
     
-        String response = match ? "Right guess": "No match";
+        //String response = match ? "Right guess": "No match";
+        String response = match ? "Winner! matched your lucky card.": "Loser, try agian.";
         
         System.out.println(response);
                
