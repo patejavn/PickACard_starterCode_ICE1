@@ -77,7 +77,7 @@ public class CardTrick
         String response = match ? "Right guess": "No match";
         
         System.out.println(response);
-               
+        //Step 6 in the assigment - create luckyCard card object       
         Card luckyCard = new Card();
         userGuess.setSuit('Diamonds');
         userGuess.setValue(1);
