@@ -49,6 +49,11 @@ public class CardTrick
         for (Card card : hand) {
             System.out.printf("%d of %s\n", card.getValue(), card.getSuit());
         }
+               
+        //Step 6 in the assigment - create luckyCard card object       
+        Card luckyCard = new Card();
+        userGuess.setSuit('Diamonds');
+        userGuess.setValue(1);       
 
         // Now ask the user for a card
         System.out.println("Pick a suit for your card");
@@ -77,10 +82,8 @@ public class CardTrick
         String response = match ? "Right guess": "No match";
         
         System.out.println(response);
-        //Step 6 in the assigment - create luckyCard card object       
-        Card luckyCard = new Card();
-        userGuess.setSuit('Diamonds');
-        userGuess.setValue(1);
+               
+        
     }
     
 }
