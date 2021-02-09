@@ -77,6 +77,10 @@ public class CardTrick
         String response = match ? "Right guess": "No match";
         
         System.out.println(response);
+               
+        Card luckyCard = new Card();
+        userGuess.setSuit('Diamonds');
+        userGuess.setValue(1);
     }
     
 }
